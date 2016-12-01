@@ -43,8 +43,9 @@ public class L7CheckServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         if (Files.exists(Paths.get("/home1/irteam/apps/jetty/webapps/maintenance"))) {
             response.setStatus(503);
+        } else {
+            response.setStatus(200);
         }
-        response.setStatus(200);
     }
 }
 
