@@ -27,14 +27,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import javax.imageio.IIOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import net.sourceforge.plantuml.FileFormat;
-import net.sourceforge.plantuml.servlet.utility.UmlExtractor;
 
 /*
  * Check servlet of the webapp.
@@ -42,11 +38,10 @@ import net.sourceforge.plantuml.servlet.utility.UmlExtractor;
  */
 @SuppressWarnings("serial")
 public class L7CheckServlet extends HttpServlet {
-    private static final String maintenanceFilePath = "/home1/irteam/apps/jetty/webapps/maintenance";
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        if (Files.exists(Paths.get(maintenanceFilePath))) {
+        if (Files.exists(Paths.get("/home1/irteam/apps/jetty/webapps/maintenance"))) {
             response.setStatus(503);
         }
         response.setStatus(200);
