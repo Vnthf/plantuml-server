@@ -79,7 +79,7 @@
 	<!-- Patterns of the servlet -->
 	<servlet-mapping>
 		<servlet-name>plantumlservlet</servlet-name>
-		<url-pattern>/plantuml/welcome</url-pattern>
+		<url-pattern>/welcome</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>plantumlservlet</servlet-name>
@@ -87,19 +87,19 @@
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>plantumlservlet</servlet-name>
-		<url-pattern>/plantuml/form</url-pattern>
+		<url-pattern>/form</url-pattern>
 	</servlet-mapping>
     <servlet-mapping>
         <servlet-name>imgservlet</servlet-name>
-        <url-pattern>/plantuml/png/*</url-pattern>
+        <url-pattern>/png/*</url-pattern>
     </servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>imgservlet</servlet-name>
-		<url-pattern>/plantuml/img/*</url-pattern>
+		<url-pattern>/img/*</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>svgservlet</servlet-name>
-		<url-pattern>/plantuml/svg/*</url-pattern>
+		<url-pattern>/svg/*</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>epsservlet</servlet-name>
@@ -115,27 +115,27 @@
     </servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>asciiservlet</servlet-name>
-		<url-pattern>/plantuml/txt/*</url-pattern>
+		<url-pattern>/txt/*</url-pattern>
 	</servlet-mapping>
     <servlet-mapping>
         <servlet-name>checkservlet</servlet-name>
-        <url-pattern>/plantuml/check/*</url-pattern>
+        <url-pattern>/check/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>mapservlet</servlet-name>
-        <url-pattern>/plantuml/map/*</url-pattern>
+        <url-pattern>/map/*</url-pattern>
     </servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>plantumlservlet</servlet-name>
-		<url-pattern>/plantuml/start/*</url-pattern>
+		<url-pattern>/start/*</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>oldproxyservlet</servlet-name>
-		<url-pattern>/plantuml/proxy/*</url-pattern>
+		<url-pattern>/proxy/*</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>proxyservlet</servlet-name>
-		<url-pattern>/plantuml/proxy</url-pattern>
+		<url-pattern>/proxy</url-pattern>
 	</servlet-mapping>
     <servlet-mapping>
         <servlet-name>languageservlet</servlet-name>
