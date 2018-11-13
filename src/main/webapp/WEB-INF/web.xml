@@ -83,7 +83,7 @@
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>plantumlservlet</servlet-name>
-		<url-pattern>/uml/*</url-pattern>
+		<url-pattern>/plantuml/uml/*</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>plantumlservlet</servlet-name>
@@ -95,7 +95,7 @@
     </servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>imgservlet</servlet-name>
-		<url-pattern>/img/*</url-pattern>
+		<url-pattern>/plantuml/img/*</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>svgservlet</servlet-name>

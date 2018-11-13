@@ -169,8 +169,8 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jetty.version>8.0.4.v20111024</jetty.version>
-    <jetty.port>8080</jetty.port>
-    <jetty.contextpath>/plantuml</jetty.contextpath>
+    <jetty.port>8081</jetty.port>
+    <jetty.contextpath></jetty.contextpath>
     <maven.build.timestamp.format>yyyyMMdd-HHmm
     </maven.build.timestamp.format>
     <timestamp>${maven.build.timestamp}</timestamp>
