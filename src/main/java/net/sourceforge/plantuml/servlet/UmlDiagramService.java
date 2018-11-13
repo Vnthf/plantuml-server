@@ -98,7 +98,7 @@ public abstract class UmlDiagramService extends HttpServlet {
         dr = null;
     }
 
-    private static final Pattern RECOVER_UML_PATTERN = Pattern.compile("/\\w+/(\\d+/)?(.*)");
+    private static final Pattern RECOVER_UML_PATTERN = Pattern.compile("/[\\w\\/]+/(\\d+/)?(.*)");
 
     /**
      * Extracts the compressed UML source from the HTTP URI.
