@@ -1,13 +1,15 @@
-version: '3.3'
-
+version: "3"
 services:
-  plantuml-server:
-    build:
-      context: .
-      dockerfile: Dockerfile.jetty
-      args:
-        BASE_URL: plantuml
-    image: plantuml/plantuml-server:local
-    container_name: plantuml-server
+  server:
+    image: "${REGISTRY}/plantuml-server:${TAG}"
+    deploy:
+      replicas: ${REPLICA}
+      restart_policy:
+        condition: on-failure
     ports:
-      - 8080:8080
+      - "8081:8080"
+    networks:
+      - webnet
+networks:
+  webnet:
+   
