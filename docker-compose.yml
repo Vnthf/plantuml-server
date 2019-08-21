@@ -1,15 +1,18 @@
-version: "3"
+version: "3.4"
 services:
   server:
-    image: "${REGISTRY}/plantuml-server:${TAG}"
+    image: "${REGISTRY}/${SERVICE}:${TAG}"
     deploy:
       replicas: ${REPLICA}
       restart_policy:
         condition: on-failure
     ports:
       - "8081:8080"
-    networks:
-      - webnet
-networks:
-  webnet:
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 10s
+      timeout: 3s
+      retries: 1
+      start_period: 10s
+
    
