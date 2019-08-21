@@ -12,8 +12,7 @@ else
 fi
 
 docker build -t 127.0.0.1:5000/plantuml-server:${TAG} .
-docker save 127.0.0.1:5000/plantuml-server:${TAG}
+docker save 127.0.0.1:5000/plantuml-server:${TAG} | ssh irteam@${SERVER} "docker load"
 scp docker-compose.yml irteam@${SERVER}:~/docker-compose.${SERVICE}.yml
-ssh irteam@${SERVER} "docker load"
 ssh irteam@${SERVER} "docker push ${REGISTRY}/${SERVICE}:${TAG}"
 ssh irteam@${SERVER} "docker stack deploy -c docker-compose.${SERVICE}.yml plantuml"
