@@ -26,7 +26,7 @@ env=$(read_var ENV)
 if [ $env == "local" ]; then
 	echo local
 	docker build -t 127.0.0.1:5000/plantuml-server:on-promise .
-	docker stack deploy -c <(docker-compose config) plantuml
+	#docker stack deploy -c <(docker-compose config) plantuml
 	exit 1
 fi
 
