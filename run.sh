@@ -26,7 +26,7 @@ env=$(read_var ENV)
 if [ $env == "local" ]; then
 	echo local
 	docker build -t 127.0.0.1:5000/plantuml-server:on-promise .
-	#docker stack deploy -c <(docker-compose config) plantuml
+	docker-compose config | docker stack deploy -c - plantuml
 	exit 1
 fi
 
@@ -40,6 +40,6 @@ echo "push docker image to ${server}"
 # docker image 빌드
 docker build -t 127.0.0.1:5000/plantuml-server:${tag} .
 docker save 127.0.0.1:5000/plantuml-server:${tag} | ssh irteam@${server} "docker load"
-scp <(docker-compose config) irteam@${server}:~/docker-compose.${service}.yml
+#scp bash -c <(docker-compose config) irteam@${server}:~/docker-compose.${service}.yml
 ssh irteam@${server} "docker push ${registry}/${service}:${tag}"
-ssh irteam@${server} "docker stack deploy -c docker-compose.${service}.yml plantuml"
+docker-compose config | ssh irteam@${server} "docker stack deploy -c - plantuml"
