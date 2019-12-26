@@ -1,11 +1,21 @@
-version: "3.4"
+version: "3.6"
 services:
   server:
     image: "${REGISTRY}/${SERVICE}:${TAG}"
+    networks:
+      - monitoring
+      - default
     deploy:
       replicas: ${REPLICA}
       restart_policy:
         condition: on-failure
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 4096M
+      placement:
+        constraints:
+          - node.labels.monitor!=1
     ports:
       - "8081:8080"
     healthcheck:
@@ -15,4 +25,8 @@ services:
       retries: 1
       start_period: 10s
 
+networks:
+  monitoring:
+    external:
+      name: monitoring
    
